@@ -25,7 +25,7 @@ class PersonaFormRequest extends Request
     {
         return [
             'tipo_persona'=>'required|max:20'
-            'nombre'=>'require|max:100',
+            'nombre'=>'required|max:100',
             'tipo_documento'=>'required|max:20',
             'num_documento'=>'required|unique:num_documento|max:15',
             'direccion'=>'max:70',

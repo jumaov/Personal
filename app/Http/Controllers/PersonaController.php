@@ -22,7 +22,11 @@ class PersonaController extends Controller
     	if ($request)
     	{
     		$query=trim($request->get('searchText'));
-    		$personas=Db::table('persona')->where('nombre','LIKE','%'.$query.'%')
+    		$personas=Db::table('persona')
+    		->where('nombre','LIKE','%'.$query.'%')
+    		->where('tipo_persona','=','Activo')
+    		->orwhere('num_documento','LIKE','%'.$query.'%')
+    		->where('tipo_persona','=','Activo')
     		->orderBy('idpersona','desc')
     		->paginate(7);
     		return view('personal.persona.index',["personas"=>$personas,"searchText"=>$query]);
@@ -36,7 +40,7 @@ class PersonaController extends Controller
     public function store(PersonaFormRequest $request)
     {
     	$persona=new Persona;
-    	$persona->tipo_persona=$request->get('tipo_persona');
+    	$persona->tipo_persona='Activo';
     	$persona->nombre=$request->get('nombre');
     	$persona->tipo_documento=$request->get('tipo_documento');
     	$persona->num_documento=$request->get('num_documento');
@@ -58,7 +62,7 @@ class PersonaController extends Controller
     public function update(PersonaFormRequest $request,$id)
     {
     	$persona=Persona::findOrFail($id);
-    	$persona->tipo_persona=$request->get('tipo_persona');
+    	//$persona->tipo_persona=$request->get('tipo_persona');
     	$persona->nombre=$request->get('nombre');
     	$persona->tipo_documento=$request->get('tipo_documento');
     	$persona->num_documento=$request->get('num_documento');
@@ -70,7 +74,9 @@ class PersonaController extends Controller
     }
     public function destroy($id)
     {
-    	$persona=DB::table('persona')->where('id','=',$id)->delete();
+    	$persona=Persona::findOrFail($id);
+    	$persona->tipo_persona='Inactivo';
+    	$persona->update();
     	return Redirect::to('personal/persona');
 
     }
