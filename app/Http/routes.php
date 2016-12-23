@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('personal/persona','PersonaController');
+

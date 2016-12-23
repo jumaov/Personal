@@ -8,7 +8,7 @@ use personal\Http\Requests;
 use personal\Persona;
 use Illuminate\Support\Facades\Redirect;
 use personal\Http\Requests\PersonaFormRequest;
-use DB:
+use DB;
 
 
 class PersonaController extends Controller
@@ -33,7 +33,7 @@ class PersonaController extends Controller
     	}
 
     }
-    public function create();
+    public function create()
     {
     	return view("personal.persona.create");
     }

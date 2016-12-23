@@ -156,6 +156,9 @@ return [
         personal\Providers\EventServiceProvider::class,
         personal\Providers\RouteServiceProvider::class,
 
+        //Nuevo Provider incluido por mi 23/12/2016
+        Collective\Html\HtmlServiceProvider::class,
+
     ],
 
     /*
@@ -201,6 +204,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        // alias agregados por mi 23/12/2016
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 
