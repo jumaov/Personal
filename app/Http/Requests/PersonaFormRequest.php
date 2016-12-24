@@ -24,10 +24,10 @@ class PersonaFormRequest extends Request
     public function rules()
     {
         return [
-            'tipo_persona'=>'required|max:20'
+            'tipo_persona'=>'required|max:20',
             'nombre'=>'required|max:100',
             'tipo_documento'=>'required|max:20',
-            'num_documento'=>'required|unique:num_documento|max:15',
+            'num_documento'=>'required|max:15',
             'direccion'=>'max:70',
             'telefono'=>'max:15',
             'email'=>'max:50'

@@ -47,7 +47,7 @@ class PersonaController extends Controller
     	$persona->direccion=$request->get('direccion');
     	$persona->telefono=$request->get('telefono');
     	$persona->email=$request->get('email');
-    	$persona-save();
+    	$persona->save();
     	return Redirect::to('personal/persona');
     }
     public function show($id)
