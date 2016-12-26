@@ -2,7 +2,7 @@
 @section ('contenido')
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			<h3>Registrar Persona</h3>
+			<h3>Editar Persona:  {{ $persona->nombre}}</h3>
 			@if (count ($errors)>0)
 			<div class="alert alert-danger">
 				<ul>
@@ -13,10 +13,10 @@
 			</div>
 			@endif
 			
-			{!!Form::open(array('url'=>'personal/persona','method'=>'POST','autocomplete'=>'off'))!!}
+			{!!Form::model($persona,['method'=>'PATCH', 'route'=>['personal.persona.update', $persona->idpersona]])!!}
 			{{Form::token()}}
 
-			@include('personal.persona.partials.form')
+			@include('personal.persona.partials.form2')
 
 			<div class="form-group">
 				<button class="btn btn-primary" type="submit">Guardar</button>

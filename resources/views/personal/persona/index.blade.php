@@ -31,10 +31,11 @@
 					<td>{{ $per->telefono}}</td>
 					<td>{{ $per->email}}</td>
 					<td>
-						<a href=""><button class="btn btn-info">Editar</button></a>
-						<a href=""><button class="btn btn-danger">Eliminar</button></a>
+						<a href="{{URL::action('PersonaController@edit',$per->idpersona)}}"><button class="btn btn-info">Editar</button></a>
+						<a href="" data-target="#modal-delete-{{$per->idpersona}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
 					</td>
 				</tr>
+				@include('personal.persona.modal')
 				@endforeach
     			</table>
 		</div>
