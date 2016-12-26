@@ -9,6 +9,7 @@
 			  	    {!! Form::select('tipo_persona',
 			  	      ['Activo' =>'Activo', 'Inactivo' => 'Inactivo'],
 			  	      null,
+			  	      ['class' => 'form-control floating-label', 'placeholder' => 'Tipo de Persona:']) !!}
 		            </div>
 					<div class="form-group">
 						<label for="nombre">Nombre</label>
@@ -23,6 +24,7 @@
 			  	    {!! Form::select('tipo_documento',
 			  	      ['Cedula' =>'Cedula', 'Pasaporte' => 'Pasaporte', 'dni' => 'DNI'],
 			  	      null,
+			  	      ['class' => 'form-control floating-label', 'placeholder' => 'Tipo de Documento:']) !!}
 		            </div>
 					<div class="form-group">
 					<label for="num_documento">Nro Documento</label>
