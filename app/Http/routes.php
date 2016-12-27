@@ -12,8 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 Route::resource('personal/persona','PersonaController');
 
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
