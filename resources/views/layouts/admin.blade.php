@@ -121,7 +121,7 @@
                        
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-folder"></i> <span>Acceso</span>
+                <i class="fa fa-folder"></i> <span>Acceso Personal</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
@@ -138,7 +138,7 @@
             <li>
               <a href="#">
                 <i class="fa fa-info-circle"></i> <span>Acerca De...</span>
-                <small class="label pull-right bg-yellow">IT</small>
+                <small class="label pull-right bg-yellow">JUMAOV</small>
               </a>
             </li>
                         

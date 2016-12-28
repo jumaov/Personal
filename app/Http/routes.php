@@ -16,8 +16,13 @@ Route::get('/', function () {
 });
 
 Route::resource('personal/persona','PersonaController');
+Route::resource('seguridad/usuario','UsuarioController');
 
 
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+/* este es para que cualquier url que se entre se vaya al home */
+
+Route::get('/{slug?}', 'HomeController@Index');
